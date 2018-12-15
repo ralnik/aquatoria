@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".MainActivity">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/btnMenuSlideIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:adjustViewBounds="true"
+                android:onClick="btnMenuOnClick"
+                app:srcCompat="@drawable/button_menu" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="58dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="58dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/titleCorpus"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@color/header_backround"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="62dp"
+                            android:layout_height="12dp"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/label_corpus" />
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imgGenPlan"
+                            android:layout_width="540dp"
+                            android:layout_height="275dp"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            app:srcCompat="@drawable/genplan" />
+
+                        <ImageView
+                            android:id="@+id/btnBuild_c2"
+                            android:layout_width="92dp"
+                            android:layout_height="wrap_content"
+                            android:translationX="303dp"
+                            android:translationY="114dp"
+                            app:srcCompat="@drawable/build_c2" />
+
+                        <ImageView
+                            android:id="@+id/hintBuild_c2"
+                            android:layout_width="36dp"
+                            android:layout_height="35dp"
+                            android:translationX="264dp"
+                            android:translationY="130dp"
+                            app:srcCompat="@drawable/hint_c2" />
+
+                        <ImageView
+                            android:id="@+id/btnBuild_c1"
+                            android:layout_width="92dp"
+                            android:layout_height="26dp"
+                            android:translationX="425dp"
+                            android:translationY="123dp"
+                            app:srcCompat="@drawable/build_c2" />
+
+                        <ImageView
+                            android:id="@+id/hintBuild_c1"
+                            android:layout_width="36dp"
+                            android:layout_height="35dp"
+                            android:translationX="520dp"
+                            android:translationY="95dp"
+                            app:srcCompat="@drawable/hint_c1" />
+
+                        <ImageView
+                            android:id="@+id/btnBuild_b2"
+                            android:layout_width="42dp"
+                            android:layout_height="56dp"
+                            android:translationX="383dp"
+                            android:translationY="175dp"
+                            app:srcCompat="@drawable/build_b2" />
+
+                        <ImageView
+                            android:id="@+id/hintBuild_b2"
+                            android:layout_width="36dp"
+                            android:layout_height="35dp"
+                            android:translationX="359dp"
+                            android:translationY="219dp"
+                            app:srcCompat="@drawable/hint_b2" />
+
+                        <ImageView
+                            android:id="@+id/btnBuild_b1"
+                            android:layout_width="42dp"
+                            android:layout_height="56dp"
+                            android:translationX="497dp"
+                            android:translationY="170dp"
+                            app:srcCompat="@drawable/build_b1" />
+
+                        <ImageView
+                            android:id="@+id/hintBuild_b1"
+                            android:layout_width="36dp"
+                            android:layout_height="35dp"
+                            android:translationX="542dp"
+                            android:translationY="210dp"
+                            app:srcCompat="@drawable/hint_b1" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="39dp"
+                        android:background="@color/header_backround"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/label_parameters"
+                            android:layout_width="96dp"
+                            android:layout_height="11dp"
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/label_parameters" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/label_count_rooms"
+                        android:layout_width="162dp"
+                        android:layout_height="13dp"
+                        android:layout_gravity="start"
+                        android:layout_marginBottom="26dp"
+                        android:src="@drawable/label_count_rooms" />
+
+                    <LinearLayout
+                        android:id="@+id/countButtonLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/btnRoom1"
+                            android:layout_width="61dp"
+                            android:layout_height="61dp"
+                            android:layout_marginEnd="27dp"
+                            android:adjustViewBounds="false"
+                            app:srcCompat="@drawable/btn_room1" />
+
+                        <ImageView
+                            android:id="@+id/btnRoom2"
+                            android:layout_width="61dp"
+                            android:layout_height="61dp"
+                            android:layout_marginEnd="27dp"
+                            app:srcCompat="@drawable/btn_room2" />
+
+                        <ImageView
+                            android:id="@+id/btnRoom3"
+                            android:layout_width="61dp"
+                            android:layout_height="61dp"
+                            android:layout_marginEnd="27dp"
+                            app:srcCompat="@drawable/btn_room3" />
+
+                        <ImageView
+                            android:id="@+id/btnRoom4"
+                            android:layout_width="61dp"
+                            android:layout_height="61dp"
+                            android:layout_marginEnd="27dp"
+                            app:srcCompat="@drawable/btn_room4" />
+
+                        <ImageView
+                            android:id="@+id/btnRoom5"
+                            android:layout_width="61dp"
+                            android:layout_height="61dp"
+                            app:srcCompat="@drawable/btn_room5" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/label_floor"
+                        android:layout_width="41dp"
+                        android:layout_height="11dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:src="@drawable/label_floor" />
+
+                    <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+                        android:id="@+id/seekBarFloor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/seekbar_progress"
+                        android:paddingStart="10dp"
+                        app:bar_color="@android:color/transparent"
+                        app:bar_highlight_color="@color/seekbar_highlight_progress_color"
+                        app:data_type="_integer"
+                        app:left_thumb_image="@drawable/thumb"
+                        app:left_thumb_image_pressed="@drawable/thumb"
+                        app:max_value="55"
+                        app:min_value="2"
+                        app:right_thumb_image="@drawable/thumb"
+                        app:right_thumb_image_pressed="@drawable/thumb" />
+
+                    <LinearLayout
+                        android:id="@+id/floorLayoutSelector"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="2dip">
+
+                            <EditText
+                                android:id="@+id/minFloorEdit"
+                                android:background="@color/seekbar_edittext"
+                                android:ems="4"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:text="2"
+                                android:textColor="@color/color_text"
+                                android:textSize="16sp" />
+
+                        </TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="2dip">
+
+                            <EditText
+                                android:id="@+id/maxFloorEdit"
+                                android:background="@color/seekbar_edittext"
+                                android:ems="4"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:text="55"
+                                android:textColor="@color/color_text"
+                                android:textSize="16sp" />
+                        </TableRow>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/label_budget"
+                        android:layout_width="233dp"
+                        android:layout_height="16dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:src="@drawable/label_budget" />
+
+                    <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+                        android:id="@+id/seekBarCost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/seekbar_progress"
+                        android:paddingStart="10dp"
+                        app:bar_color="@android:color/transparent"
+                        app:bar_highlight_color="@color/seekbar_highlight_progress_color"
+                        app:data_type="_integer"
+                        app:left_thumb_image="@drawable/thumb"
+                        app:left_thumb_image_pressed="@drawable/thumb"
+                        app:max_value="55"
+                        app:min_value="2"
+                        app:right_thumb_image="@drawable/thumb"
+                        app:right_thumb_image_pressed="@drawable/thumb" />
+
+                    <LinearLayout
+                        android:id="@+id/costLayoutSelector"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="2dip">
+
+                            <EditText
+                                android:id="@+id/minCostEdit"
+                                android:background="@color/seekbar_edittext"
+                                android:ems="4"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:text="2"
+                                android:textColor="@color/color_text"
+                                android:textSize="16sp" />
+
+                        </TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="2dip">
+
+                            <EditText
+                                android:id="@+id/maxCostEdit"
+                                android:background="@color/seekbar_edittext"
+                                android:ems="4"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:text="55"
+                                android:textColor="@color/color_text"
+                                android:textSize="16sp" />
+                        </TableRow>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/label_square"
+                        android:layout_width="109dp"
+                        android:layout_height="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:src="@drawable/label_square" />
+
+                    <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+                        android:id="@+id/seekBarSquare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/seekbar_progress"
+                        android:paddingStart="10dp"
+                        app:bar_color="@android:color/transparent"
+                        app:bar_highlight_color="@color/seekbar_highlight_progress_color"
+                        app:data_type="_integer"
+                        app:left_thumb_image="@drawable/thumb"
+                        app:left_thumb_image_pressed="@drawable/thumb"
+                        app:max_value="55"
+                        app:min_value="2"
+                        app:right_thumb_image="@drawable/thumb"
+                        app:right_thumb_image_pressed="@drawable/thumb" />
+
+                    <LinearLayout
+                        android:id="@+id/squareLayoutSelector"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="2dip">
+
+                            <EditText
+                                android:id="@+id/minSquareEdit"
+                                android:background="@color/seekbar_edittext"
+                                android:ems="4"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:text="2"
+                                android:textColor="@color/color_text"
+                                android:textSize="16sp" />
+
+                        </TableRow>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" />
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="2dip">
+
+                            <EditText
+                                android:id="@+id/maxSquareEdit"
+                                android:background="@color/seekbar_edittext"
+                                android:ems="4"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:text="55"
+                                android:textColor="@color/color_text"
+                                android:textSize="16sp" />
+                        </TableRow>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/label_advance_parameters"
+                        android:layout_width="226dp"
+                        android:layout_height="14dp"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="26dp"
+                        android:src="@drawable/label_dop_attr" />
+
+                    <LinearLayout
+                        android:id="@+id/buttonAdvanceLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="67dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/btnLoggia"
+                            android:layout_width="60dp"
+                            android:layout_height="79dp"
+                            android:layout_marginEnd="27dp"
+                            android:adjustViewBounds="false"
+                            app:srcCompat="@drawable/btn_loggia" />
+
+                        <ImageView
+                            android:id="@+id/btnBalcon"
+                            android:layout_width="61dp"
+                            android:layout_height="79dp"
+                            android:layout_marginEnd="27dp"
+                            app:srcCompat="@drawable/btn_balcon" />
+
+                        <ImageView
+                            android:id="@+id/btnKladovaya"
+                            android:layout_width="60dp"
+                            android:layout_height="79dp"
+                            android:layout_marginEnd="27dp"
+                            app:srcCompat="@drawable/btn_kladovaya" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/barButtonsFilter"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/btnClear"
+                            android:layout_width="179dp"
+                            android:layout_height="43dp"
+                            android:layout_marginEnd="24dp"
+                            android:adjustViewBounds="true"
+                            android:onClick="buttonsSearchOnClick"
+                            app:srcCompat="@drawable/btn_clear" />
+
+                        <ImageView
+                            android:id="@+id/btnSearch"
+                            android:layout_width="179dp"
+                            android:layout_height="43dp"
+                            android:layout_gravity="center_horizontal"
+                            android:adjustViewBounds="true"
+                            android:onClick="buttonsSearchOnClick"
+                            app:srcCompat="@drawable/btn_search" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/menuLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/bg_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/bg_menu" />
+
+            <ImageView
+                android:id="@+id/btnOptions"
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:translationX="28dp"
+                android:translationY="27dp"
+                app:srcCompat="@drawable/button_options" />
+
+            <ImageView
+                android:id="@+id/btnPlay"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:translationX="679dp"
+                android:translationY="31dp"
+                app:srcCompat="@drawable/button_play_on" />
+
+            <ImageView
+                android:id="@+id/bntSound"
+                android:layout_width="41dp"
+                android:layout_height="41dp"
+                android:translationX="686dp"
+                android:translationY="110dp"
+                app:srcCompat="@drawable/button_sound_on" />
+
+            <ImageView
+                android:id="@+id/btn1"
+                android:layout_width="69dp"
+                android:layout_height="69dp"
+                android:translationX="350dp"
+                android:translationY="62dp"
+                app:srcCompat="@drawable/button_1" />
+
+            <ImageView
+                android:id="@+id/btn2"
+                android:layout_width="69dp"
+                android:layout_height="69dp"
+                android:translationX="465dp"
+                android:translationY="117dp"
+                app:srcCompat="@drawable/button_2" />
+
+            <ImageView
+                android:id="@+id/btn3"
+                android:layout_width="69dp"
+                android:layout_height="69dp"
+                android:translationX="492dp"
+                android:translationY="240dp"
+                app:srcCompat="@drawable/button_3" />
+
+            <ImageView
+                android:id="@+id/btn4"
+                android:layout_width="69dp"
+                android:layout_height="69dp"
+                android:translationX="413dp"
+                android:translationY="340dp"
+                app:srcCompat="@drawable/button_4" />
+
+            <ImageView
+                android:id="@+id/btn5"
+                android:layout_width="69dp"
+                android:layout_height="69dp"
+                android:translationX="285dp"
+                android:translationY="340dp"
+                app:srcCompat="@drawable/button_5" />
+
+            <ImageView
+                android:id="@+id/btn6"
+                android:layout_width="69dp"
+                android:layout_height="69dp"
+                android:translationX="206dp"
+                android:translationY="240dp"
+                app:srcCompat="@drawable/button_6" />
+
+            <ImageView
+                android:id="@+id/btn7"
+                android:layout_width="69dp"
+                android:layout_height="69dp"
+                android:translationX="235dp"
+                android:translationY="115dp"
+                app:srcCompat="@drawable/button_7" />
+
+            <ImageButton
+                android:id="@+id/btnMenuSlideOut"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@android:color/transparent"
+                android:onClick="btnMenuOnClick"
+                android:translationX="360dp"
+                android:translationY="470dp" />
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

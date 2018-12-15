@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="background">#b1cdd9</color>
+    <color name="header_backround">#0f4052</color>
+    <color name="color_text">#0f4052</color>
+
+    <color name="seekbar_edittext">#cce3eb</color>
+    <color name="seekbar_progress_color">#d5ecf4</color>
+    <color name="seekbar_highlight_progress_color">#0f4051</color>
+</resources>

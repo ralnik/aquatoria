@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">aquatoria</string>
+
+    <string name="label_count_room">Количество комнат</string>
+    <string name="label_floor">Этаж</string>
+    <string name="todo">TODO</string>
+
+</resources>

@@ -2,12 +2,31 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#d81b60</color>
     <color name="background">#b1cdd9</color>
     <color name="header_backround">#0f4052</color>
     <color name="color_text">#0f4052</color>
 
+
     <color name="seekbar_edittext">#cce3eb</color>
     <color name="seekbar_progress_color">#d5ecf4</color>
     <color name="seekbar_highlight_progress_color">#0f4051</color>
+
+    <color name="settings_background">#b1cdd9</color>
+    <color name="settings_color_text">#cce3eb</color>
+    <color name="settings_color_titles">#0f4051</color>
+    <color name="settings_color_edit">#cce3eb</color>
+    <color name="settings_color_edit_text">#0f4051</color>
+
+    <color name="colorTextListitems">#0f4255</color>
+    <color name="colorTableItemSelected">#0f4255</color>
+    <color name="itemFirstBG_ListView">#b1cdd9</color>
+    <color name="itemSecondBG_ListView">#6e93a3</color>
+    <color name="colorBorderTable">#103f53</color>
+
+    <color name="titleOfForms">#103f53</color>
+    <color name="colorTextTitleBeforeTable">#cde4ec</color>
+    <color name="titleListView">#103f53</color>
+    <color name="colorTextTitleTable">#bbdbea</color>
+    <color name="colorBorderTitleTable">#a8c6d1</color>
 </resources>

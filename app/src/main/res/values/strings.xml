@@ -5,4 +5,19 @@
     <string name="label_floor">Этаж</string>
     <string name="todo">TODO</string>
 
+    <string name="settings_title_attention">Смена адреса сервера и пароль влияют на работоспособность всей системы \n
+        Перед внесением изменений рекомендуем связаться с \n
+        системным администратором
+    </string>
+
+    <string name="korpus">КОРПУС</string>
+    <string name="num_flat">№ КВАРТИРЫ</string>
+    <string name="floor">ЭТАЖ</string>
+    <string name="count_room">КОЛИЧЕСТВО СПАЛЕН</string>
+    <string name="square">ПЛОЩАДЬ</string>
+    <string name="cost">ПОЛНАЯ ЦЕНА</string>
+    <string name="balcon">БАЛКОН</string>
+    <string name="loggia">ЛОДЖИЯ</string>
+    <string name="kladovaya">КЛАДОВАЯ</string>
+    <string name="no_row">Нет записей удовлетворяющих заданным условиям.</string>
 </resources>

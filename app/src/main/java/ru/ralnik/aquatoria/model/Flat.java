@@ -9,86 +9,74 @@ import android.support.annotation.NonNull;
 public class Flat {
     @PrimaryKey(autoGenerate = true)
     @NonNull
+//    @ColumnInfo(name = "_id")
+//    private Long id;
     @ColumnInfo(name = "_id")
-    private Long id;
+    private Long  id;              //ID помещения
 
-    @ColumnInfo(name = "ArticleId")
-    private String  ArticleId;              //ID квартиры / ID машино - места
+    @ColumnInfo(name = "FlatNumber")
+    private int  FlatNumber;         // номер помещения
 
-    @ColumnInfo(name = "ArticleSubType")
-    private String  ArticleSubType;         //Тип объекта недвижимости
+    @ColumnInfo(name = "FullCost")
+    private Long  FullCost;              //Полная цена
 
-    @ColumnInfo(name = "LayoutUrl")
-    private String  LayoutUrl;              //Планировка квартиры (ссылка)
-
-    @ColumnInfo(name = "BeforeBtiNumber")
-    private int BeforeBtiNumber;        //№ квартиры / № машино - места
-
-    @ColumnInfo(name = "Category")
-    private String Category;
-
-    @ColumnInfo(name = "AddressId")
-    private String  AddressId;              //Идентификатор корпуса: AddressId 
-
-    @ColumnInfo(name = "AddressName")
-    private String  AddressName;            //Наименование корпуса: AddressName
-
-    @ColumnInfo(name = "AddressNumber")     //№ корпуса
-    private int AddressNumber;
-
-    @ColumnInfo(name = "SectionNumber")
-    private String  SectionNumber;          //№ секции
+    @ColumnInfo(name = "Address")
+    private String Address;        //Адрес
 
     @ColumnInfo(name = "Floor")
-    private int Floor;                  //Этаж
+    private int Floor;              //Этаж
+
+    @ColumnInfo(name = "Section")
+    private int  Section;              //Подъезд
+
+    @ColumnInfo(name = "Corpus")
+    private String  Corpus;            //Наименование (название) дома (Корпус)
+
+    @ColumnInfo(name = "Square")     //Площадь
+    private Float Square;
+
+    @ColumnInfo(name = "CostForMetr")
+    private int  CostForMetr;          //Цена за метр
 
     @ColumnInfo(name = "Rooms")
     private int Rooms;                  //Количество комнат
 
-    @ColumnInfo(name = "Quantity")
-    private Float   Quantity;               //Общая площадь / Площадь машиноместа
-
-    @ColumnInfo(name = "DiscountMax")
-    private Float   DiscountMax;            //Общая стоимость (с учетом максимальной скидки)
-
     @ColumnInfo(name = "FinishTypeId")
-    private String  FinishTypeId;           //Отделка
+    private String  FinishTypeId;           //Код планировки
 
-    @ColumnInfo(name = "StatusCodeName")
-    private String  StatusCodeName;         //Статус квартиры (уточнить у РОП)
+    @ColumnInfo(name = "StatusBuildings")
+    private String  StatusBuildings;         //Статус (стадия) строительства
 
-    @ColumnInfo(name = "TownHouse")
-    private String  TownHouse;              //TownHouse
+    @ColumnInfo(name = "LiveSquare")
+    private Float  LiveSquare;              //Жилай площадь
 
-    @ColumnInfo(name = "PentHouse")
-    private String  PentHouse;              //PentHouse
+    @ColumnInfo(name = "KitchenSquare")
+    private Float  KitchenSquare;              //Площадь кухни
 
-    @ColumnInfo(name = "TwoLevel")
-    private String  TwoLevel;               //TwoLevel
+    @ColumnInfo(name = "CountSquare")
+    private Float  CountSquare;               //Расчетная площадь
 
-    @ColumnInfo(name = "SeparateEntrance")
-    private String  SeparateEntrance;       //SeparateEntrance ; TwoEnter
-
-    @ColumnInfo(name = "WithWindow")
-    private String  WithWindow;             //WithWingow
-
-    @ColumnInfo(name = "FirePlace")
-    private String  FirePlace;              //С камином
-
-    @ColumnInfo(name = "Terrace")
-    private String  Terrace;                //Terrace;
+    @ColumnInfo(name = "Window")
+    private String  Window;       //Куда уходят окна
 
     @ColumnInfo(name = "CountBalcony")
-    private int CountBalcony;           //CountBalcony
+    private int CountBalcony;           //Количяество балконов
 
     @ColumnInfo(name = "CountLoggia")
-    private int CountLoggia;            //CountLoggia
+    private int CountLoggia;            //Количество лоджий
 
-    @ColumnInfo(name = "CountTerrace")
-    private int CountTerrace;           //CountTerrace
+    @ColumnInfo(name = "Studia")
+    private String Studia;           //Студия
 
-    @ColumnInfo(name = "DeliveryPeriod")
-    private String DeliveryPeriod;      //Период ввода в эксплуатацию
+    @ColumnInfo(name = "Kladovaya")
+    private int Kladovaya;      //Количество кладовых
+
+    @ColumnInfo(name = "Bedroom")
+    private int Bedroom;      //Количество спален
+
+    @ColumnInfo(name = "Status")
+    private String Status;      //Статус
+
 
     public Flat(){
     }
@@ -102,92 +90,76 @@ public class Flat {
         this.id = id;
     }
 
-    public String getArticleId() {
-        return ArticleId;
+    public int getFlatNumber() {
+        return FlatNumber;
     }
 
-    public void setArticleId(String articleId) {
-        ArticleId = articleId;
+    public void setFlatNumber(int flatNumber) {
+        FlatNumber = flatNumber;
     }
 
-    public String getArticleSubType() {
-        return ArticleSubType;
+    public Long getFullCost() {
+        return FullCost;
     }
 
-    public void setArticleSubType(String articleSubType) {
-        ArticleSubType = articleSubType;
+    public void setFullCost(Long fullCost) {
+        FullCost = fullCost;
     }
 
-    public String getLayoutUrl() {
-        return LayoutUrl;
+    public String getAddress() {
+        return Address;
     }
 
-    public void setLayoutUrl(String layoutUrl) {
-        LayoutUrl = layoutUrl;
+    public void setAddress(String address) {
+        Address = address;
     }
 
-    public Integer getBeforeBtiNumber() {
-        return BeforeBtiNumber;
-    }
-
-    public void setBeforeBtiNumber(Integer beforeBtiNumber) {
-        BeforeBtiNumber = beforeBtiNumber;
-    }
-
-    public String getAddressId() {
-        return AddressId;
-    }
-
-    public void setAddressId(String addressId) {
-        AddressId = addressId;
-    }
-
-    public String getAddressName() {
-        return AddressName;
-    }
-
-    public void setAddressName(String addressName) {
-        AddressName = addressName;
-    }
-
-    public String getSectionNumber() {
-        return SectionNumber;
-    }
-
-    public void setSectionNumber(String sectionNumber) {
-        SectionNumber = sectionNumber;
-    }
-
-    public Integer getFloor() {
+    public int getFloor() {
         return Floor;
     }
 
-    public void setFloor(Integer floor) {
+    public void setFloor(int floor) {
         Floor = floor;
     }
 
-    public Integer getRooms() {
+    public int getSection() {
+        return Section;
+    }
+
+    public void setSection(int section) {
+        Section = section;
+    }
+
+    public String getCorpus() {
+        return Corpus;
+    }
+
+    public void setCorpus(String corpus) {
+        Corpus = corpus;
+    }
+
+    public Float getSquare() {
+        return Square;
+    }
+
+    public void setSquare(Float square) {
+        Square = square;
+    }
+
+    public int getCostForMetr() {
+        return CostForMetr;
+    }
+
+    public void setCostForMetr(int costForMetr) {
+        CostForMetr = costForMetr;
+    }
+
+    public int getRooms() {
         return Rooms;
     }
 
-    public void setRooms(Integer rooms) {
+    public void setRooms(int rooms) {
         Rooms = rooms;
-    }
-
-    public Float getQuantity() {
-        return Quantity;
-    }
-
-    public void setQuantity(Float quantity) {
-        Quantity = quantity;
-    }
-
-    public Float getDiscountMax() {
-        return DiscountMax;
-    }
-
-    public void setDiscountMax(Float discountMax) {
-        DiscountMax = discountMax;
     }
 
     public String getFinishTypeId() {
@@ -198,161 +170,134 @@ public class Flat {
         FinishTypeId = finishTypeId;
     }
 
-    public String getStatusCodeName() {
-        return StatusCodeName;
+    public String getStatusBuildings() {
+        return StatusBuildings;
     }
 
-    public void setStatusCodeName(String statusCodeName) {
-        StatusCodeName = statusCodeName;
+    public void setStatusBuildings(String statusBuildings) {
+        StatusBuildings = statusBuildings;
     }
 
-    public String getTownHouse() {
-        return TownHouse;
+    public Float getLiveSquare() {
+        return LiveSquare;
     }
 
-    public void setTownHouse(String townHouse) {
-        TownHouse = townHouse;
+    public void setLiveSquare(Float liveSquare) {
+        LiveSquare = liveSquare;
     }
 
-    public String getPentHouse() {
-        return PentHouse;
+    public Float getKitchenSquare() {
+        return KitchenSquare;
     }
 
-    public void setPentHouse(String pentHouse) {
-        PentHouse = pentHouse;
+    public void setKitchenSquare(Float kitchenSquare) {
+        KitchenSquare = kitchenSquare;
     }
 
-    public String getTwoLevel() {
-        return TwoLevel;
+    public Float getCountSquare() {
+        return CountSquare;
     }
 
-    public void setTwoLevel(String twoLevel) {
-        TwoLevel = twoLevel;
+    public void setCountSquare(Float countSquare) {
+        CountSquare = countSquare;
     }
 
-    public String getSeparateEntrance() {
-        return SeparateEntrance;
+    public String getWindow() {
+        return Window;
     }
 
-    public void setSeparateEntrance(String separateEntrance) {
-        SeparateEntrance = separateEntrance;
+    public void setWindow(String window) {
+        Window = window;
     }
 
-    public String getWithWindow() {
-        return WithWindow;
-    }
-
-    public void setWithWindow(String withWindow) {
-        WithWindow = withWindow;
-    }
-
-    public String getFirePlace() {
-        return FirePlace;
-    }
-
-    public void setFirePlace(String firePlace) {
-        FirePlace = firePlace;
-    }
-
-    public String getTerrace() {
-        return Terrace;
-    }
-
-    public void setTerrace(String terrace) {
-        Terrace = terrace;
-    }
-
-    public Integer getCountBalcony() {
+    public int getCountBalcony() {
         return CountBalcony;
     }
 
-    public void setCountBalcony(Integer countBalcony) {
+    public void setCountBalcony(int countBalcony) {
         CountBalcony = countBalcony;
     }
 
-    public Integer getCountLoggia() {
+    public int getCountLoggia() {
         return CountLoggia;
     }
 
-    public void setCountLoggia(Integer countLoggia) {
+    public void setCountLoggia(int countLoggia) {
         CountLoggia = countLoggia;
     }
 
-    public Integer getCountTerrace() {
-        return CountTerrace;
+    public String getStudia() {
+        return Studia;
     }
 
-    public void setCountTerrace(Integer countTerrace) {
-        CountTerrace = countTerrace;
+    public void setStudia(String studia) {
+        Studia = studia;
     }
 
-    public String getCategory() {
-        return Category;
+    public int getKladovaya() {
+        return Kladovaya;
     }
 
-    public int getAddressNumber() {
-        return AddressNumber;
+    public void setKladovaya(int kladovaya) {
+        Kladovaya = kladovaya;
     }
 
-    public void setAddressNumber(int addressNumber) {
-        AddressNumber = addressNumber;
+    public int getBedroom() {
+        return Bedroom;
     }
 
-    public String getDeliveryPeriod() {
-        return DeliveryPeriod;
+    public void setBedroom(int bedroom) {
+        Bedroom = bedroom;
     }
 
-    public void setDeliveryPeriod(String deliveryPeriod) {
-        DeliveryPeriod = deliveryPeriod;
+    public String getStatus() {
+        return Status;
     }
 
-    public void setCategory(String category) {
-        Category = category;
+    public void setStatus(String status) {
+        Status = status;
     }
 
-    @Override
-    public String toString() {
-//        return  "ArticleId='" + ArticleId + "&" +
-//                "ArticleSubType='" + ArticleSubType + "&" +
-//                "LayoutUrl='" + LayoutUrl + "&" +
-//                "BeforeBtiNumber=" + BeforeBtiNumber +
-//                "AddressId='" + AddressId + "&" +
-//                "AddressName='" + AddressName + "&" +
-//                "SectionNumber='" + SectionNumber + "&" +
-//                "Floor=" + Floor +
-//                "Rooms=" + Rooms +
-//                "Quantity=" + Quantity +
-//                "DiscountMax=" + DiscountMax +
-//                "FinishTypeId='" + FinishTypeId + "&" +
-//                "StatusCodeName='" + StatusCodeName + "&" +
-//                "TownHouse='" + TownHouse + "&" +
-//                "PentHouse='" + PentHouse + "&" +
-//                "TwoLevel='" + TwoLevel + "&" +
-//                "SeparateEntrance='" + SeparateEntrance + "&" +
-//                "WithWindow='" + WithWindow + "&" +
-//                "FirePlace='" + FirePlace + "&" +
-//                "Terrace='" + Terrace + "&" +
+    //    @Override
+//    public String toString() {
+//                return
+//                "LayoutUrl=" + LayoutUrl + "&" +
+//                "AddressId=" + AddressId + "&" +
+//                "SectionNumber=" + SectionNumber + "&" +
+//                "Floor=" + Floor + "&" +
+//                "Rooms=" + Rooms + "&" +
+//                "Quantity=" + Quantity + "&" +
+//                "DiscountMax=" + DiscountMax + "&" +
+//                "FinishTypeId=" + FinishTypeId + "&" +
+//                "TownHouse=" + TownHouse + "&" +
+//                "PentHouse=" + PentHouse + "&" +
+//                "TwoLevel=" + TwoLevel + "&" +
+//                "SeparateEntrance=" + SeparateEntrance + "&" +
+//                "WithWindow=" + WithWindow + "&" +
+//                "FirePlace=" + FirePlace + "&" +
+//                "Terrace=" + Terrace + "&" +
 //                "CountBalcony=" + CountBalcony + "&" +
 //                "CountLoggia=" + CountLoggia + "&" +
 //                "CountTerrace=" + CountTerrace;
-                return
-                "LayoutUrl=" + LayoutUrl + "&" +
-                "AddressId=" + AddressId + "&" +
-                "SectionNumber=" + SectionNumber + "&" +
+//    }
+
+
+    @Override
+    public String toString() {
+        return  "FlatNumber=" + FlatNumber + "&" +
+                "FullCost=" + FullCost + "&" +
                 "Floor=" + Floor + "&" +
+                "Section=" + Section + "&" +
+                "Corpus=" + Corpus + "&" +
+                "Square=" + Square + "&" +
+                "CostForMetr=" + CostForMetr + "&" +
                 "Rooms=" + Rooms + "&" +
-                "Quantity=" + Quantity + "&" +
-                "DiscountMax=" + DiscountMax + "&" +
-                "FinishTypeId=" + FinishTypeId + "&" +
-                "TownHouse=" + TownHouse + "&" +
-                "PentHouse=" + PentHouse + "&" +
-                "TwoLevel=" + TwoLevel + "&" +
-                "SeparateEntrance=" + SeparateEntrance + "&" +
-                "WithWindow=" + WithWindow + "&" +
-                "FirePlace=" + FirePlace + "&" +
-                "Terrace=" + Terrace + "&" +
+                "LiveSquare=" + LiveSquare + "&" +
+                "KitchenSquare=" + KitchenSquare + "&" +
+                "CountSquare=" + CountSquare + "&" +
                 "CountBalcony=" + CountBalcony + "&" +
                 "CountLoggia=" + CountLoggia + "&" +
-                "CountTerrace=" + CountTerrace;
+                "Kladovaya=" + Kladovaya + "&" +
+                "Bedroom=" + Bedroom ;
     }
 }

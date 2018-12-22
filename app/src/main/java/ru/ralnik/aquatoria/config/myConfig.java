@@ -2,6 +2,7 @@ package ru.ralnik.aquatoria.config;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+
 import static java.lang.Integer.parseInt;
 
 
@@ -29,8 +30,19 @@ public class myConfig {
     private String APP_PREF_MINBUDGET = "minBudget";
     private String APP_PREF_MAXBUDGET = "maxBudget";
 
-    private static float minSquare=13.40F, maxSquare=149.77F, minCost=0, maxCost=17.7F;
-    private static int minFloor=0,maxFloor=23;
+    private String APP_PREF_EMAIL = "email";
+
+    public String getEmail() {
+        if(mSettings.contains(APP_PREF_EMAIL)){
+            return mSettings.getString(APP_PREF_EMAIL, "ralnik@mail.ru");
+        }
+        return "";
+    }
+
+    public void setEmail(String email) {
+        editor.putString(APP_PREF_EMAIL,email);
+        editor.apply();
+    }
 
     private SharedPreferences mSettings;
     SharedPreferences.Editor editor;

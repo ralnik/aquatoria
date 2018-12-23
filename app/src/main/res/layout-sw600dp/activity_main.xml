@@ -16,18 +16,6 @@
         android:layout_height="wrap_content"
         android:visibility="gone"/>
 
-    <LinearLayout
-        android:id="@+id/settingsLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="90dp"
-        android:layout_marginEnd="38dp"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-    </LinearLayout>
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -252,7 +240,8 @@
                         app:max_value="55"
                         app:min_value="2"
                         app:right_thumb_image="@drawable/thumb"
-                        app:right_thumb_image_pressed="@drawable/thumb" />
+                        app:right_thumb_image_pressed="@drawable/thumb"
+                        />
 
                     <LinearLayout
                         android:id="@+id/floorLayoutSelector"
@@ -727,6 +716,18 @@
                 android:layout_height="match_parent"
                 android:choiceMode="singleChoice"
                 android:divider="#00000000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/settingsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="58dp"
+            android:layout_marginTop="90dp"
+            android:layout_marginEnd="38dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
         </LinearLayout>
 
         <AbsoluteLayout

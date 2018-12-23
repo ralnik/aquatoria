@@ -231,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
         btnVolume = (ImageView) findViewById(R.id.btnSound);
         btnOptions = (ImageView) findViewById(R.id.btnOptions);
         btnPlayPause.setTag(0);
-        btnVolume.setTag(0);
+        btnVolume.setTag(1);
     }
 
     private void setValuesToSeekBar(){

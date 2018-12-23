@@ -26,7 +26,7 @@ public class Parser extends Thread implements Runnable {
         try {
             //AssetManager am = getAssets();
             //InputStream is = am.open("test.xls");
-            File file = new File(GlobalVars.XLS_FILE);
+            File file = new File(GlobalVars.XLS_PATH + GlobalVars.XLS_FILE);
             InputStream is = new BufferedInputStream(new FileInputStream(file));
             Workbook wb = Workbook.getWorkbook(is);
             Sheet s = wb.getSheet(0);

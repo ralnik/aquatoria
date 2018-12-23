@@ -71,8 +71,8 @@ public class myAdapter extends CursorAdapter {
         holder.column5 = column5;
         holder.column6 = column6;
         holder.column7 = column7;
-        holder.column8 = column7;
-        holder.column9 = column7;
+        holder.column8 = column8;
+        holder.column9 = column9;
         holder.selected = row;
 
         root.setTag(holder);

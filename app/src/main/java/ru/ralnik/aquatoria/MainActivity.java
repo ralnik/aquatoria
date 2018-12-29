@@ -235,8 +235,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setValuesToSeekBar(){
-//    try {
+    try {
+        Log.d(TAG,"minBudget: "+new FlatRepository(this).getMin("Budget").toString());
         cfg.setMinBudget(Float.valueOf(new FlatRepository(this).getMin("Budget").toString()));
+        Log.d(TAG,"maxBudget: "+new FlatRepository(this).getMax("Budget").toString());
         cfg.setMaxBudget(Float.valueOf(new FlatRepository(this).getMax("Budget").toString()));
         cfg.setMinCost(Float.valueOf(new FlatRepository(this).getMin("Cost").toString()));
         cfg.setMaxCost(Float.valueOf(new FlatRepository(this).getMax("Cost").toString()));
@@ -244,9 +246,9 @@ public class MainActivity extends AppCompatActivity {
         cfg.setMaxFloor((int) new FlatRepository(this).getMax("Floor"));
         cfg.setMinSquare((float) new FlatRepository(this).getMin("Square"));
         cfg.setMaxSquare((float) new FlatRepository(this).getMax("Square"));
-//    }catch (Exception e){
-//        e.printStackTrace();
-//    }
+    }catch (Exception e){
+        e.printStackTrace();
+    }
 
         setDataToCostSeekBar();
 
@@ -614,10 +616,10 @@ public class MainActivity extends AppCompatActivity {
         String order = null;
         switch (v.getId()){
             case R.id.colKorpus:
-                order = " order by category,sectionNumber";
+                order = " order by Corpus";
                 break;
             case R.id.colFlat:
-                order = " order by BeforeBtiNumber";
+                order = " order by FlatNumber";
                 break;
             case R.id.colFloor:
                 order = " order by Floor";
@@ -626,10 +628,10 @@ public class MainActivity extends AppCompatActivity {
                 order = " order by Rooms";
                 break;
             case R.id.colSquare:
-                order = " order by Quantity";
+                order = " order by Square";
                 break;
             case R.id.colCost:
-                order = " order by DiscountMax";
+                order = " order by FullCost";
                 break;
             case R.id.colBalcon:
                 order = " order by CountBalcony";

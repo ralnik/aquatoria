@@ -7,13 +7,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.karumi.dexter.Dexter;
+import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
-import com.karumi.dexter.listener.PermissionDeniedResponse;
-import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
-import com.karumi.dexter.listener.single.PermissionListener;
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 
 import java.io.File;
+import java.util.List;
 
 import ru.ralnik.aquatoria.XLS.CopyXlsFromUrl;
 import ru.ralnik.aquatoria.XLS.Parser;
@@ -27,40 +27,40 @@ public class SplashscreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashscreen);
         this.context = this;
-           Dexter.withActivity(this)
-                .withPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                .withListener(new PermissionListener() {
-                    @Override
-                    public void onPermissionGranted(PermissionGrantedResponse response) {
-                          copyXLS();
-                          new Parser(context).run();
 
-                        new Thread(new Runnable() {
-                            @Override
-                            public void run() {
 
-                                try {
-                                    Thread.sleep(5000);
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
+
+            Dexter.withActivity(this)
+                    .withPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE)
+                    .withListener(new MultiplePermissionsListener() {
+                        @Override
+                        public void onPermissionsChecked(MultiplePermissionsReport report) {
+                            new Thread(new Runnable() {
+                                @Override
+                                public void run() {
+
+                                    try {
+                                        copyXLS();
+                                        Thread.sleep(5000);
+                                        new Parser(context).run();
+                                        Thread.sleep(5000);
+                                        startApp();
+                                        finish();
+                                    } catch (InterruptedException e) {
+                                        e.printStackTrace();
+                                    }
                                 }
+                            }).start();
 
-                                startApp();
-                                finish();
-                            }
-                        }).start();
-                    }
 
-                    @Override
-                    public void onPermissionDenied(PermissionDeniedResponse response) {
+                        }
 
-                    }
+                        @Override
+                        public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {
 
-                    @Override
-                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
+                        }
+                    }).check();
 
-                    }
-                }).check();
 
     }
 

@@ -146,7 +146,7 @@ public class FlatRepository {
             if(param[0].equals("Budget")){
                 return mAsyncFlatDao.getMinBudget();
             }
-            return null;
+            return 0;
         }
     }
 
@@ -170,7 +170,7 @@ public class FlatRepository {
             if(param[0].equals("Budget")){
                 return mAsyncFlatDao.getMaxBudget();
             }
-            return null;
+            return 0;
         }
     }
 

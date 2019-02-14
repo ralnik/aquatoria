@@ -35,7 +35,6 @@ public class listviewItemSelected implements AdapterView.OnItemClickListener {
         //иначе с предыдущего снимаем выделение
         if(ID != 0) {
 
-            //String fname = "pic_"+GlobalVar.razdelFilter.toLowerCase() + SELECTED_LISTVIEW_ITEM.column2.getText() + "_" + SELECTED_LISTVIEW_ITEM.column4.getText();SELECTED_LISTVIEW_ITEM.column1.setImageResource(context.getResources().getIdentifier(fname, "drawable", context.getPackageName()));
             SELECTED_LISTVIEW_ITEM.column1.setTextColor(context.getResources().getColor(R.color.colorTextListitems));
             SELECTED_LISTVIEW_ITEM.column2.setTextColor(context.getResources().getColor(R.color.colorTextListitems));
             SELECTED_LISTVIEW_ITEM.column3.setTextColor(context.getResources().getColor(R.color.colorTextListitems));
@@ -43,6 +42,9 @@ public class listviewItemSelected implements AdapterView.OnItemClickListener {
             SELECTED_LISTVIEW_ITEM.column5.setTextColor(context.getResources().getColor(R.color.colorTextListitems));
             SELECTED_LISTVIEW_ITEM.column6.setTextColor(context.getResources().getColor(R.color.colorTextListitems));
             SELECTED_LISTVIEW_ITEM.column7.setTextColor(context.getResources().getColor(R.color.colorTextListitems));
+            SELECTED_LISTVIEW_ITEM.column8.setTextColor(context.getResources().getColor(R.color.colorTextListitems));
+            SELECTED_LISTVIEW_ITEM.column9.setTextColor(context.getResources().getColor(R.color.colorTextListitems));
+
         }
 
 
@@ -53,15 +55,39 @@ public class listviewItemSelected implements AdapterView.OnItemClickListener {
             //String fname = "pic_"+GlobalVar.razdelFilter.toLowerCase() + currentViewHolder.column2.getText() + "_" + currentViewHolder.column4.getText();
             //currentViewHolder.column1.setImageResource(context.getResources().getIdentifier(fname + "_p", "drawable", context.getPackageName()));
 
-        /*
-            currentViewHolder.column1.setTextColor(context.getResources().getColor(R.color.colorTableItemSelected));
-            currentViewHolder.column2.setTextColor(context.getResources().getColor(R.color.colorTableItemSelected));
-            currentViewHolder.column3.setTextColor(context.getResources().getColor(R.color.colorTableItemSelected));
-            currentViewHolder.column4.setTextColor(context.getResources().getColor(R.color.colorTableItemSelected));
-            currentViewHolder.column5.setTextColor(context.getResources().getColor(R.color.colorTableItemSelected));
-            currentViewHolder.column6.setTextColor(context.getResources().getColor(R.color.colorTableItemSelected));
-            currentViewHolder.column7.setTextColor(context.getResources().getColor(R.color.colorTableItemSelected));
-        */
+
+
+        currentViewHolder.column1.setTextColor(context.getResources().getColor(R.color.colorTableItemSelected));
+        currentViewHolder.column2.setTextColor(context.getResources().getColor(R.color.colorTableItemSelected));
+        currentViewHolder.column3.setTextColor(context.getResources().getColor(R.color.colorTableItemSelected));
+        currentViewHolder.column4.setTextColor(context.getResources().getColor(R.color.colorTableItemSelected));
+        currentViewHolder.column5.setTextColor(context.getResources().getColor(R.color.colorTableItemSelected));
+        currentViewHolder.column6.setTextColor(context.getResources().getColor(R.color.colorTableItemSelected));
+        currentViewHolder.column7.setTextColor(context.getResources().getColor(R.color.colorTableItemSelected));
+        currentViewHolder.column8.setTextColor(context.getResources().getColor(R.color.colorTableItemSelected));
+        currentViewHolder.column9.setTextColor(context.getResources().getColor(R.color.colorTableItemSelected));
+
+        //Если при выделинии строки по четным один цвет шрифта, по нечетным другой
+//            if(currentViewHolder.position %2 == 0){
+//                currentViewHolder.column1.setTextColor(context.getResources().getColor(R.color.colorTableItemSelected));
+//                currentViewHolder.column2.setTextColor(context.getResources().getColor(R.color.colorTableItemSelected));
+//                currentViewHolder.column3.setTextColor(context.getResources().getColor(R.color.colorTableItemSelected));
+//                currentViewHolder.column4.setTextColor(context.getResources().getColor(R.color.colorTableItemSelected));
+//                currentViewHolder.column5.setTextColor(context.getResources().getColor(R.color.colorTableItemSelected));
+//                currentViewHolder.column6.setTextColor(context.getResources().getColor(R.color.colorTableItemSelected));
+//                currentViewHolder.column7.setTextColor(context.getResources().getColor(R.color.colorTableItemSelected));
+//            }else{
+//                currentViewHolder.column1.setTextColor(context.getResources().getColor(R.color.colorTextListitems));
+//                currentViewHolder.column2.setTextColor(context.getResources().getColor(R.color.colorTextListitems));
+//                currentViewHolder.column3.setTextColor(context.getResources().getColor(R.color.colorTextListitems));
+//                currentViewHolder.column4.setTextColor(context.getResources().getColor(R.color.colorTextListitems));
+//                currentViewHolder.column5.setTextColor(context.getResources().getColor(R.color.colorTextListitems));
+//                currentViewHolder.column6.setTextColor(context.getResources().getColor(R.color.colorTextListitems));
+//                currentViewHolder.column7.setTextColor(context.getResources().getColor(R.color.colorTextListitems));
+//
+//            }
+
+
 
         //выводим данные на сервер vvvv
 //        myDBHelper tempDB = new myDBHelper(context);

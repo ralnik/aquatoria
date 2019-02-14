@@ -1,6 +1,7 @@
 package ru.ralnik.aquatoria;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,16 +9,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.webkit.WebView;
 import android.widget.AbsoluteLayout;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -146,6 +151,13 @@ public class MainActivity extends AppCompatActivity {
         menuLayout = (AbsoluteLayout) findViewById(R.id.menuLayout);
         menuLayout.setVisibility(View.GONE);
 
+        menuLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showMenu(false);
+            }
+        });
+
         btn1 = (ImageView) findViewById(R.id.btn1);
         btn2 = (ImageView) findViewById(R.id.btn2);
         btn3 = (ImageView) findViewById(R.id.btn3);
@@ -236,9 +248,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setValuesToSeekBar(){
     try {
-        Log.d(TAG,"minBudget: "+new FlatRepository(this).getMin("Budget").toString());
         cfg.setMinBudget(Float.valueOf(new FlatRepository(this).getMin("Budget").toString()));
-        Log.d(TAG,"maxBudget: "+new FlatRepository(this).getMax("Budget").toString());
         cfg.setMaxBudget(Float.valueOf(new FlatRepository(this).getMax("Budget").toString()));
         cfg.setMinCost(Float.valueOf(new FlatRepository(this).getMin("Cost").toString()));
         cfg.setMaxCost(Float.valueOf(new FlatRepository(this).getMax("Cost").toString()));
@@ -296,37 +306,37 @@ public class MainActivity extends AppCompatActivity {
         switch (v.getId()){
             case R.id.btn1:
                 v.startAnimation(animScale);
-                vvvv.selectById(0);
+                vvvv.selectById(1);
                 play();
                 break;
             case R.id.btn2:
                 v.startAnimation(animScale);
-                vvvv.selectById(1);
+                vvvv.selectById(2);
                 play();
                 break;
             case R.id.btn3:
                 v.startAnimation(animScale);
-                vvvv.selectById(2);
+                vvvv.selectById(3);
                 play();
                 break;
             case R.id.btn4:
                 v.startAnimation(animScale);
-                vvvv.selectById(3);
+                vvvv.selectById(4);
                 play();
                 break;
             case R.id.btn5:
                 v.startAnimation(animScale);
-                vvvv.selectById(4);
+                vvvv.selectById(5);
                 play();
                 break;
             case R.id.btn6:
                 v.startAnimation(animScale);
-                vvvv.selectById(5);
+                vvvv.selectById(6);
                 play();
                 break;
             case R.id.btn7:
                 v.startAnimation(animScale);
-                vvvv.selectById(6);
+                vvvv.selectById(7);
                 play();
                 break;
 
@@ -534,15 +544,11 @@ public class MainActivity extends AppCompatActivity {
 
         switch (v.getId()){
             case R.id.btnMenuSlideIn:
-                 menuLayout.setVisibility(View.VISIBLE);
-                 menuLayout.startAnimation(slide_in);
-                 btnMenuSlideIn.setVisibility(View.INVISIBLE);
+                 showMenu(true);
                break;
 
             case R.id.btnMenuSlideOut:
-                menuLayout.startAnimation(slide_out);
-                menuLayout.setVisibility(View.GONE);
-                btnMenuSlideIn.setVisibility(View.VISIBLE);
+                showMenu(false);
                 break;
             case R.id.btnPlay:
                 if((Integer) btnPlayPause.getTag() == 1 ){
@@ -570,7 +576,19 @@ public class MainActivity extends AppCompatActivity {
                 mainPanel.setVisibility(View.GONE);
                 resultPanel.setVisibility(View.GONE);
                 settingsPanel.setVisibility(View.VISIBLE);
+                //Убираем всплывающее меню
+                showMenu(false);
                 break;
+        }
+    }
+
+    private void showMenu(boolean flag){
+        if(flag){
+            menuLayout.setVisibility(View.VISIBLE);
+            menuLayout.startAnimation(slide_in);
+        }else{
+            menuLayout.startAnimation(slide_out);
+            menuLayout.setVisibility(View.GONE);
         }
     }
 
@@ -811,9 +829,9 @@ public class MainActivity extends AppCompatActivity {
         query = "select * from flats where ";
 
         query = query + " (floor >= "+seekbarFloor.getSelectedMinValue() + " and floor <= "+seekbarFloor.getSelectedMaxValue()+") ";
-        query = query + " and (Square >= " + seekbarSquare.getSelectedMinValue() + " and Square <= "+((Float) seekbarSquare.getSelectedMaxValue()+0.1) + ") ";
+        query = query + " and (Square >= " +((Float) seekbarSquare.getSelectedMinValue()-0.1) + " and Square <= "+((Float) seekbarSquare.getSelectedMaxValue()+0.1) + ") ";
         if((Integer) titleCost.getTag() == 1) {
-            query = query + " and (CostForMetr >= " + minCostEdit.getText() + "*1000" + " and CostForMetr <= " + maxCostEdit.getText() + "*1000" + ") ";
+            query = query + " and (CostForMetr >= " + minCostEdit.getText() + "*1000" + " and CostForMetr <= " + (Float.valueOf(maxCostEdit.getText().toString())+0.1) + "*1000" + ") ";
         }
         if((Integer) titleBudget.getTag() == 1){
             query = query + " and (FullCost >= " + minCostEdit.getText() + "*1000000" + " and FullCost <= " + maxCostEdit.getText() + "*1000000" + ") ";
@@ -867,6 +885,7 @@ public class MainActivity extends AppCompatActivity {
             query = query + countBuildString;
         }
 
+        query = query + " and status='Свободно' ";
         Log.d(TAG, query + " order by FullCost");
 
         loadFromSqlite(query + " order by FullCost");
@@ -958,7 +977,7 @@ public class MainActivity extends AppCompatActivity {
         }
         timer = new myTimer(this, minute * 60000, 1000);
         //номер трека в плейлисте на время простоя
-        timer.setTimerTrack(7);
+        timer.setTimerTrack(0);
         if(cfg.getDisableTimer() == false){
             timer.start();
         }

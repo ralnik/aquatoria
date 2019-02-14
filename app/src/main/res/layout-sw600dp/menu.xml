@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <AbsoluteLayout
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="516dp"
+
+        android:background="@drawable/bg_menu"
+        android:clipChildren="true"
+        android:isScrollContainer="true"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/btnOptions"
+            android:layout_width="39dp"
+            android:layout_height="39dp"
+            android:layout_x="28dp"
+            android:layout_y="27dp"
+            android:onClick="btnMenuOnClick"
+            app:srcCompat="@drawable/button_options" />
+
+        <ImageView
+            android:id="@+id/btnPlay"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_x="674dp"
+            android:layout_y="31dp"
+            android:onClick="btnMenuOnClick"
+            app:srcCompat="@drawable/play" />
+
+        <ImageView
+            android:id="@+id/btnSound"
+            android:layout_width="41dp"
+            android:layout_height="41dp"
+            android:layout_x="681dp"
+            android:layout_y="110dp"
+            android:onClick="btnMenuOnClick"
+            app:srcCompat="@drawable/button_sound_on" />
+
+        <ImageView
+            android:id="@+id/btn1"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:layout_x="348dp"
+            android:layout_y="62dp"
+            android:onClick="buttonsCaruselOnClick"
+            app:srcCompat="@drawable/button_1" />
+
+        <ImageView
+            android:id="@+id/btn2"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:layout_x="460dp"
+            android:layout_y="116dp"
+            android:onClick="buttonsCaruselOnClick"
+            app:srcCompat="@drawable/button_2" />
+
+        <ImageView
+            android:id="@+id/btn3"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:layout_x="487dp"
+            android:layout_y="241dp"
+            android:onClick="buttonsCaruselOnClick"
+            app:srcCompat="@drawable/button_3" />
+
+        <ImageView
+            android:id="@+id/btn4"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:layout_x="411dp"
+            android:layout_y="340dp"
+            android:onClick="buttonsCaruselOnClick"
+            app:srcCompat="@drawable/button_4" />
+
+        <ImageView
+            android:id="@+id/btn5"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:layout_x="283dp"
+            android:layout_y="340dp"
+            android:onClick="buttonsCaruselOnClick"
+            app:srcCompat="@drawable/button_5" />
+
+        <ImageView
+            android:id="@+id/btn6"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:layout_x="204dp"
+            android:layout_y="241dp"
+            android:onClick="buttonsCaruselOnClick"
+            app:srcCompat="@drawable/button_6" />
+
+        <ImageView
+            android:id="@+id/btn7"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:layout_x="235dp"
+            android:layout_y="115dp"
+            android:onClick="buttonsCaruselOnClick"
+            app:srcCompat="@drawable/button_7" />
+
+        <ImageView
+            android:id="@+id/btnMenuSlideOut"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_x="357dp"
+            android:layout_y="469dp"
+            android:background="@android:color/transparent"
+            android:onClick="btnMenuOnClick" />
+
+    </AbsoluteLayout>
+</LinearLayout>

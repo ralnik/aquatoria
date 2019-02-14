@@ -14,10 +14,16 @@
         android:id="@+id/webView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"/>
+        android:visibility="gone">
+
+    </WebView>
+
     <FrameLayout
+        android:id="@+id/mainFrame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:hapticFeedbackEnabled="true">
 
 
         <ImageView
@@ -37,15 +43,22 @@
             android:layout_marginTop="90dp"
             android:layout_marginEnd="35dp"
             android:orientation="vertical"
+            android:scrollbars="none"
             android:visibility="visible">
 
             <ScrollView
+                android:id="@+id/scrollMainLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="false"
+                android:clickable="false"
+                android:scrollbars="none">
 
                 <LinearLayout
+                    android:id="@+id/subScrollMainLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:descendantFocusability="afterDescendants"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -240,8 +253,7 @@
                         app:max_value="55"
                         app:min_value="2"
                         app:right_thumb_image="@drawable/thumb"
-                        app:right_thumb_image_pressed="@drawable/thumb"
-                        />
+                        app:right_thumb_image_pressed="@drawable/thumb" />
 
                     <LinearLayout
                         android:id="@+id/floorLayoutSelector"
@@ -561,7 +573,7 @@
                     android:onClick="titleOfListviewOnClick"
                     android:text="@string/korpus"
                     android:textColor="@color/colorTextTitleTable"
-                    android:textSize="7sp"
+                    android:textSize="9sp"
                     android:textStyle="bold" />
 
                 <FrameLayout
@@ -578,7 +590,7 @@
                     android:onClick="titleOfListviewOnClick"
                     android:text="@string/num_flat"
                     android:textColor="@color/colorTextTitleTable"
-                    android:textSize="7sp"
+                    android:textSize="9sp"
                     android:textStyle="bold" />
 
                 <FrameLayout
@@ -595,7 +607,7 @@
                     android:onClick="titleOfListviewOnClick"
                     android:text="@string/floor"
                     android:textColor="@color/colorTextTitleTable"
-                    android:textSize="7sp"
+                    android:textSize="9sp"
                     android:textStyle="bold" />
 
                 <FrameLayout
@@ -612,7 +624,7 @@
                     android:onClick="titleOfListviewOnClick"
                     android:text="@string/count_room"
                     android:textColor="@color/colorTextTitleTable"
-                    android:textSize="7sp"
+                    android:textSize="9sp"
                     android:textStyle="bold" />
 
                 <FrameLayout
@@ -629,7 +641,7 @@
                     android:onClick="titleOfListviewOnClick"
                     android:text="@string/square"
                     android:textColor="@color/colorTextTitleTable"
-                    android:textSize="7sp"
+                    android:textSize="9sp"
                     android:textStyle="bold" />
 
                 <FrameLayout
@@ -646,7 +658,7 @@
                     android:onClick="titleOfListviewOnClick"
                     android:text="@string/cost"
                     android:textColor="@color/colorTextTitleTable"
-                    android:textSize="7sp"
+                    android:textSize="9sp"
                     android:textStyle="bold" />
 
                 <FrameLayout
@@ -662,7 +674,7 @@
                     android:onClick="titleOfListviewOnClick"
                     android:text="@string/balcon"
                     android:textColor="@color/colorTextTitleTable"
-                    android:textSize="8sp" />
+                    android:textSize="9sp" />
 
                 <FrameLayout
                     android:layout_width="2dp"
@@ -677,7 +689,7 @@
                     android:onClick="titleOfListviewOnClick"
                     android:text="@string/loggia"
                     android:textColor="@color/colorTextTitleTable"
-                    android:textSize="8sp" />
+                    android:textSize="9sp" />
 
                 <FrameLayout
                     android:layout_width="2dp"
@@ -692,7 +704,7 @@
                     android:onClick="titleOfListviewOnClick"
                     android:text="@string/kladovaya"
                     android:textColor="@color/colorTextTitleTable"
-                    android:textSize="8sp" />
+                    android:textSize="9sp" />
 
                 <FrameLayout
                     android:layout_width="2dp"
@@ -732,10 +744,18 @@
 
         <AbsoluteLayout
             android:id="@+id/menuLayout"
-            android:layout_width="762dp"
-            android:layout_height="516dp"
-            android:background="@drawable/bg_menu"
-            android:visibility="gone">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/imageFon"
+                android:layout_width="match_parent"
+                android:layout_height="516dp"
+                android:clickable="true"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/bg_menu" />
 
             <ImageView
                 android:id="@+id/btnOptions"
@@ -770,8 +790,8 @@
                 android:layout_height="69dp"
                 android:layout_x="348dp"
                 android:layout_y="62dp"
-                app:srcCompat="@drawable/button_1"
-                android:onClick="buttonsCaruselOnClick"/>
+                android:onClick="buttonsCaruselOnClick"
+                app:srcCompat="@drawable/button_1" />
 
             <ImageView
                 android:id="@+id/btn2"
@@ -779,8 +799,8 @@
                 android:layout_height="69dp"
                 android:layout_x="460dp"
                 android:layout_y="116dp"
-                app:srcCompat="@drawable/button_2"
-                android:onClick="buttonsCaruselOnClick"/>
+                android:onClick="buttonsCaruselOnClick"
+                app:srcCompat="@drawable/button_2" />
 
             <ImageView
                 android:id="@+id/btn3"
@@ -788,8 +808,8 @@
                 android:layout_height="69dp"
                 android:layout_x="487dp"
                 android:layout_y="241dp"
-                app:srcCompat="@drawable/button_3"
-                android:onClick="buttonsCaruselOnClick"/>
+                android:onClick="buttonsCaruselOnClick"
+                app:srcCompat="@drawable/button_3" />
 
             <ImageView
                 android:id="@+id/btn4"
@@ -797,8 +817,8 @@
                 android:layout_height="69dp"
                 android:layout_x="411dp"
                 android:layout_y="340dp"
-                app:srcCompat="@drawable/button_4"
-                android:onClick="buttonsCaruselOnClick"/>
+                android:onClick="buttonsCaruselOnClick"
+                app:srcCompat="@drawable/button_4" />
 
             <ImageView
                 android:id="@+id/btn5"
@@ -806,8 +826,8 @@
                 android:layout_height="69dp"
                 android:layout_x="283dp"
                 android:layout_y="340dp"
-                app:srcCompat="@drawable/button_5"
-                android:onClick="buttonsCaruselOnClick"/>
+                android:onClick="buttonsCaruselOnClick"
+                app:srcCompat="@drawable/button_5" />
 
             <ImageView
                 android:id="@+id/btn6"
@@ -815,8 +835,8 @@
                 android:layout_height="69dp"
                 android:layout_x="204dp"
                 android:layout_y="241dp"
-                app:srcCompat="@drawable/button_6"
-                android:onClick="buttonsCaruselOnClick"/>
+                android:onClick="buttonsCaruselOnClick"
+                app:srcCompat="@drawable/button_6" />
 
             <ImageView
                 android:id="@+id/btn7"
@@ -824,8 +844,8 @@
                 android:layout_height="69dp"
                 android:layout_x="235dp"
                 android:layout_y="115dp"
-                app:srcCompat="@drawable/button_7"
-                android:onClick="buttonsCaruselOnClick"/>
+                android:onClick="buttonsCaruselOnClick"
+                app:srcCompat="@drawable/button_7" />
 
             <ImageView
                 android:id="@+id/btnMenuSlideOut"

@@ -37,7 +37,7 @@
             android:layout_marginTop="45dp"
             android:layout_marginEnd="18dp"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -560,7 +560,7 @@
                     android:onClick="titleOfListviewOnClick"
                     android:text="@string/korpus"
                     android:textColor="@color/colorTextTitleTable"
-                    android:textSize="7sp"
+                    android:textSize="5sp"
                     android:textStyle="bold" />
 
                 <FrameLayout
@@ -577,7 +577,7 @@
                     android:onClick="titleOfListviewOnClick"
                     android:text="@string/num_flat"
                     android:textColor="@color/colorTextTitleTable"
-                    android:textSize="7sp"
+                    android:textSize="5sp"
                     android:textStyle="bold" />
 
                 <FrameLayout
@@ -594,7 +594,7 @@
                     android:onClick="titleOfListviewOnClick"
                     android:text="@string/floor"
                     android:textColor="@color/colorTextTitleTable"
-                    android:textSize="7sp"
+                    android:textSize="5sp"
                     android:textStyle="bold" />
 
                 <FrameLayout
@@ -611,7 +611,7 @@
                     android:onClick="titleOfListviewOnClick"
                     android:text="@string/count_room"
                     android:textColor="@color/colorTextTitleTable"
-                    android:textSize="7sp"
+                    android:textSize="5sp"
                     android:textStyle="bold" />
 
                 <FrameLayout
@@ -628,7 +628,7 @@
                     android:onClick="titleOfListviewOnClick"
                     android:text="@string/square"
                     android:textColor="@color/colorTextTitleTable"
-                    android:textSize="7sp"
+                    android:textSize="5sp"
                     android:textStyle="bold" />
 
                 <FrameLayout
@@ -645,7 +645,7 @@
                     android:onClick="titleOfListviewOnClick"
                     android:text="@string/cost"
                     android:textColor="@color/colorTextTitleTable"
-                    android:textSize="7sp"
+                    android:textSize="5sp"
                     android:textStyle="bold" />
 
                 <FrameLayout
@@ -661,7 +661,7 @@
                     android:onClick="titleOfListviewOnClick"
                     android:text="@string/balcon"
                     android:textColor="@color/colorTextTitleTable"
-                    android:textSize="8sp" />
+                    android:textSize="5sp" />
 
                 <FrameLayout
                     android:layout_width="2dp"
@@ -676,7 +676,7 @@
                     android:onClick="titleOfListviewOnClick"
                     android:text="@string/loggia"
                     android:textColor="@color/colorTextTitleTable"
-                    android:textSize="8sp" />
+                    android:textSize="5sp" />
 
                 <FrameLayout
                     android:layout_width="2dp"
@@ -691,7 +691,7 @@
                     android:onClick="titleOfListviewOnClick"
                     android:text="@string/kladovaya"
                     android:textColor="@color/colorTextTitleTable"
-                    android:textSize="8sp" />
+                    android:textSize="5sp" />
 
                 <FrameLayout
                     android:layout_width="2dp"
@@ -731,10 +731,16 @@
 
         <AbsoluteLayout
             android:id="@+id/menuLayout"
-            android:layout_width="381dp"
-            android:layout_height="258dp"
-            android:background="@drawable/bg_menu"
-            android:visibility="gone">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/imageFon"
+                android:layout_width="match_parent"
+                android:layout_height="258dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/bg_menu" />
 
             <ImageView
                 android:id="@+id/btnOptions"

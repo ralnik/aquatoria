@@ -140,7 +140,7 @@ public class Parser extends Thread implements Runnable {
                 }
              //   test = "Status";
             //    Log.d("myDebug","Status="+s.getCell(35,i).getContents());
-                flat.setStatus(s.getCell(35,i).getContents());
+                flat.setStatus(s.getCell(39,i).getContents());
 
                 //будет вставленa новая запись, если запись уже есть, то тогда она обновится полностью по всем полям
                 new FlatRepository(this.context).insert(flat);
